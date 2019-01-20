@@ -21,16 +21,6 @@
 <script>
 import fireBaseKey from "../../config.js"
 const firebase = require("firebase")
-// Initialize Firebase
-  const config = {
-    apiKey: fireBaseKey.fireBaseKey(),
-    authDomain: "website-7b764.firebaseapp.com",
-    databaseURL: "https://website-7b764.firebaseio.com",
-    projectId: "website-7b764",
-    storageBucket: "website-7b764.appspot.com",
-    messagingSenderId: "1044121166234"
-  };
-  firebase.initializeApp(config);
 
 export default {
     data: function() {
