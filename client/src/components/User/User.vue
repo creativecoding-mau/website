@@ -1,13 +1,16 @@
 <template>
     <div>
         <user-sign-up />
-        <user-sign-in />
+        <user-sign-in @userIsLoggedIn="setCurrentUser" />
+        <user-bio :currentUser="currentUser" />
     </div>
 </template>
 
 <script>
 import UserSignUp from "./UserSignUp.vue"
 import UserSignIn from "./UserSignIn.vue"
+import UserBio from "./UserBio.vue"
+
 const firebase = require("firebase")
 import fireBaseKey from "../../config.js"
 
@@ -26,15 +29,19 @@ export default {
     
     data: function() {
         return {
-
+            currentUser: null,
         }
     },
     methods: {
-
+        setCurrentUser(email) {
+            this.currentUser = email
+            console.log(this.currentUser)
+        }
     },
     components: {
         UserSignUp,
-        UserSignIn
+        UserSignIn,
+        UserBio
     }
 }
 </script>

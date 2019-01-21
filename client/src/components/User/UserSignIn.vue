@@ -4,13 +4,13 @@
             Email: 
         </p>
         <p>
-            <input type="text" v-model="signInEmail">
+            <input type="text" id="email" v-model="signInEmail">
         </p>
         <p>
             Password: 
         </p>
         <p>
-            <input type="text" v-model="signInPassword">
+            <input type="text" id="password" v-model="signInPassword">
         </p>
         <p>
             <button @click="signIn">Sign In</button>
@@ -25,20 +25,35 @@ const firebase = require("firebase")
 export default {
     data: function() {
         return {
-            signInEmail: "",
-            signInPassword: ""
+            signInEmail: "felixmorau@gmail.com",
+            signInPassword: "felix123"
         }
     },
     methods: {
         signIn() {
             let email = this.signInEmail
             let password = this.signInPassword
+            const user = firebase.auth().currentUser;
 
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode, errorMessage)
+            });
+            if (user.emailVerified) {
+                this.$emit("userIsLoggedIn", email)
+            } else {
+                this.verifyUserEmail()
+            }
+        },
+        verifyUserEmail() {
+            firebase.auth().currentUser.sendEmailVerification()
+            .then(function() {
+            console.log("email sent")
+            })
+            .catch(function(error) {
+            console.log(error)
             });
         }
     }

@@ -1,0 +1,69 @@
+<template>
+    <div>
+        <p> logged in user {{ currentUser }} </p>
+        <p>
+            Display Name
+        </p>
+        <p>
+            <input type="text" name="" v-model="userDisplayName">
+        </p>
+        <p>
+            User Website
+        </p>
+        <p>
+            <input type="text" name="" v-model="userWebsite">
+        </p>
+        <p>
+            User Github
+        </p>
+        <p>
+            <input type="text" name="" v-model="userGithub">
+        </p>
+        <p>
+            <button @click="changeUserBio">Submit</button>
+        </p>
+    </div>
+</template>
+
+<script>
+const firebase = require("firebase")
+const axios = require("axios")
+
+export default {
+    data: function() {
+        return {
+            userDisplayName: "",
+            userWebsite: "",
+            userGithub: "",
+        }
+    },
+    methods: {
+        changeUserBio() {
+            const user = firebase.auth().currentUser
+            user.updateProfile({
+            displayName: this.userDisplayName,
+            }).then(() => {
+                this.$emit("userDisplayName", user.displayName)
+            }, function(error) {
+            console.log(error)
+            });
+            let userBio = {
+                displayName: this.userDisplayName,
+                website: this.userWebsite,
+                github: this.userGithub,
+            }
+            axios
+          .put(
+            "https://website-7b764.firebaseio.com/Users/ +" + user.uid + ".json", userBio)
+        }
+    },
+    props: ["currentUser"]
+}
+</script>
+
+<style scoped>
+input {
+    border: 1px solid black;
+}
+
+</style>

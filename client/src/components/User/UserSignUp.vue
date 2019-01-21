@@ -25,8 +25,8 @@ const firebase = require("firebase")
 export default {
     data: function() {
         return {
-            userEmail: "",
-            userPassword: "",
+            userEmail: "felixmorau@gmail.com",
+            userPassword: "felix123",
             isPasswordInvalid: true,
             isEmailInvalid: true,
             emailMessage: "Enter a valid email!",
