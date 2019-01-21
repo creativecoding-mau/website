@@ -1,21 +1,19 @@
 <template>
-    <div>
-        <p>
-            Email: 
-        </p>
-        <p>
-            <input type="text" id="email" v-model="signInEmail">
-        </p>
-        <p>
-            Password: 
-        </p>
-        <p>
-            <input type="text" id="password" v-model="signInPassword">
-        </p>
-        <p>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+            <p> Email: </p>
+            <p> <input type="text" id="email" v-model="signInEmail"> </p>
+      </v-flex>
+      <v-flex xs12>
+            <p> Password: </p>
+            <p> <input type="text" id="password" v-model="signInPassword"> </p>
+      </v-flex>
+      <v-flex xs12>
             <button @click="signIn">Sign In</button>
-        </p>
-    </div>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

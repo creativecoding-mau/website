@@ -1,21 +1,19 @@
 <template>
-    <div>
-        <p>
-            {{ emailMessage }}
-        </p>
-        <p>
-            <input type="text" name="" v-model="userEmail">
-        </p>
-        <p>
-            {{ passwordMessage }}
-        </p>
-        <p>
-            <input type="text" name="" v-model="userPassword">
-        </p>
-        <p>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+            <p> {{ emailMessage }} </p>
+            <p> <input type="text" name="" v-model="userEmail"> </p>
+      </v-flex>
+      <v-flex xs12>
+            <p> {{ passwordMessage }} </p>
+            <p> <input type="password" name="" v-model="userPassword"> </p>
+      </v-flex>
+      <v-flex xs12>
             <button @click="createNewUser">Submit</button>
-        </p>
-    </div>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

@@ -1,29 +1,26 @@
 <template>
-    <div>
-        <p> logged in user {{ currentUser }} </p>
-        <p>
-            Display Name
-        </p>
-        <p>
-            <input type="text" name="" v-model="userDisplayName">
-        </p>
-        <p>
-            User Website
-        </p>
-        <p>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+            <p> logged in user {{ currentUser }} </p>
+            <p> Display Name </p>
             <input type="text" name="" v-model="userWebsite">
-        </p>
-        <p>
-            User Github
-        </p>
-        <p>
-            <input type="text" name="" v-model="userGithub">
-        </p>
-        <p>
-            <button @click="changeUserBio">Submit</button>
-        </p>
-    </div>
+      </v-flex>
+      <v-flex xs12>
+            <p> User Website </p>
+            <p> <input type="text" name="" v-model="userWebsite"> </p>
+      </v-flex>
+      <v-flex xs12>
+            <p> User Github </p>
+            <p> <input type="text" name="" v-model="userGithub"> </p>
+      </v-flex>
+      <v-flex xs12>
+            <p> <button @click="changeUserBio">Submit</button> </p>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
+
 
 <script>
 const firebase = require("firebase")

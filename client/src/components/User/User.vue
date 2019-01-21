@@ -34,7 +34,7 @@ import fireBaseKey from "../../config.js"
 
 // Initialize Firebase
   const config = {
-    apiKey: fireBaseKey.fireBaseKey(),
+    apiKey: fireBaseKey,
     authDomain: "website-7b764.firebaseapp.com",
     databaseURL: "https://website-7b764.firebaseio.com",
     projectId: "website-7b764",
