@@ -1,8 +1,26 @@
 <template>
     <div>
-        <user-sign-up />
-        <user-sign-in @userIsLoggedIn="setCurrentUser" />
-        <user-bio :currentUser="currentUser" />
+        <div class="userSignUp" v-if="currentUser === null && userSigningUp">
+            <p>
+                Sign Up
+            </p>
+            <p @click="signInOrUp">
+                Already a member? Click here to sign in!
+            </p>
+            <user-sign-up />
+        </div>
+        <div class="userSignIn" v-if="currentUser === null && userSigningIn">
+            <p>
+                Sign In
+                <p @click="signInOrUp">
+                    Not a member? Click here to register!
+                </p>
+                <user-sign-in @userIsLoggedIn="setCurrentUser" />
+        </div>
+        <div class="userChangeBio" v-else-if="currentUser != null">
+
+            <user-bio :currentUser="currentUser" />
+        </div>
     </div>
 </template>
 
@@ -30,12 +48,23 @@ export default {
     data: function() {
         return {
             currentUser: null,
+            userSigningIn: true,
+            userSigningUp: false,
         }
     },
     methods: {
         setCurrentUser(email) {
             this.currentUser = email
             console.log(this.currentUser)
+        },
+        signInOrUp() {
+            if (this.userSigningIn) {
+                this.userSigningIn = false
+                this.userSigningUp = true
+            } else if (!this.userSigningIn) {
+                this.userSigningUp = false
+                this.userSigningIn = true
+            }
         }
     },
     components: {
