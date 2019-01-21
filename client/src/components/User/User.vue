@@ -24,6 +24,7 @@
             <user-bio :currentUser="currentUser" v-if="userUpdatingBio" />
         </div>
         <user-sign-out @userSignedOut="userSignedOut" v-if="currentUser != null" />
+        <user-reset-password :currentUser="currentUser" v-if="currentUser != null" />
     </div>
 </template>
 
@@ -32,6 +33,7 @@ import UserSignUp from "./UserSignUp.vue"
 import UserSignIn from "./UserSignIn.vue"
 import UserBio from "./UserBio.vue"
 import UserSignOut from "./UserSignOut.vue"
+import UserResetPassword from "./UserResetPassword"
 
 const firebase = require("firebase")
 import fireBaseKey from "../../config.js"
@@ -90,7 +92,8 @@ export default {
         UserSignUp,
         UserSignIn,
         UserBio,
-        UserSignOut
+        UserSignOut,
+        UserResetPassword
     }
 }
 </script>
