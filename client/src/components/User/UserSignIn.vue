@@ -24,26 +24,28 @@ export default {
     data: function() {
         return {
             signInEmail: "felixmorau@gmail.com",
-            signInPassword: "felix123"
+            signInPassword: "felix123",
+            userObject: firebase.auth().currentUser
         }
     },
     methods: {
         signIn() {
             let email = this.signInEmail
             let password = this.signInPassword
-            const user = firebase.auth().currentUser;
 
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode, errorMessage)
-            });
-            if (user.emailVerified) {
+            }).then(() => {
+                const user = firebase.auth().currentUser
+                if (user.emailVerified) {
                 this.$emit("userIsLoggedIn", email)
-            } else {
-                this.verifyUserEmail()
-            }
+                } else {
+                    this.verifyUserEmail()
+                }
+            });
         },
         verifyUserEmail() {
             firebase.auth().currentUser.sendEmailVerification()
@@ -54,7 +56,7 @@ export default {
             console.log(error)
             });
         }
-    }
+    },
 }
 </script>
 
