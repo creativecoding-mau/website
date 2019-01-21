@@ -18,9 +18,13 @@
                 <user-sign-in @userIsLoggedIn="setCurrentUser" />
         </div>
         <div class="userChangeBio" v-else-if="currentUser != null">
-
-            <user-bio :currentUser="currentUser" />
+            <p @click="updateBio">
+                Update your bio!
+            </p>
+            <user-bio :currentUser="currentUser" v-if="userUpdatingBio" />
         </div>
+        <user-sign-out @userSignedOut="userSignedOut" v-if="currentUser != null" />
+        <user-reset-password :currentUser="currentUser" v-if="currentUser != null" />
     </div>
 </template>
 
@@ -28,6 +32,8 @@
 import UserSignUp from "./UserSignUp.vue"
 import UserSignIn from "./UserSignIn.vue"
 import UserBio from "./UserBio.vue"
+import UserSignOut from "./UserSignOut.vue"
+import UserResetPassword from "./UserResetPassword"
 
 const firebase = require("firebase")
 import fireBaseKey from "../../config.js"
@@ -50,6 +56,7 @@ export default {
             currentUser: null,
             userSigningIn: true,
             userSigningUp: false,
+            userUpdatingBio: false
         }
     },
     methods: {
@@ -65,12 +72,28 @@ export default {
                 this.userSigningUp = false
                 this.userSigningIn = true
             }
+        },
+        updateBio() {
+             if (this.userUpdatingBio) {
+                 this.userUpdatingBio = false
+             } else {
+                 this.userUpdatingBio = true
+             }
+        },
+        userSignedOut() {
+            this.currentUser = null
+            this.userSigningUp = false
+            this.userSigningIn = true
+            this.userUpdatingBio = false
+            
         }
     },
     components: {
         UserSignUp,
         UserSignIn,
-        UserBio
+        UserBio,
+        UserSignOut,
+        UserResetPassword
     }
 }
 </script>
