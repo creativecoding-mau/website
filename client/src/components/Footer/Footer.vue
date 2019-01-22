@@ -57,7 +57,11 @@ export default {
       font-size: 1.7rem;
       margin: 0;
   }
+  .footerContainer {
+      position: relative;
+  }
 }
+
 
 
 
