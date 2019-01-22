@@ -2,7 +2,7 @@
   <div id="app">
     <vue-header />
      <user />
-    <!-- <vue-footer /> -->
+     <vue-footer />
   </div>
 </template>
 
