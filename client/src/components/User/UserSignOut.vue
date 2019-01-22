@@ -1,10 +1,11 @@
 <template>
-<div>
-    <button @click="signOut">
-        Sign out
-    </button>
-</div>
-    
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <button class="generalButton" @click="signOut">Sign out</button>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

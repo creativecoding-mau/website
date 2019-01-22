@@ -10,7 +10,7 @@
             <p> <input type="text" id="password" v-model="signInPassword"> </p>
       </v-flex>
       <v-flex xs12>
-            <button @click="signIn">Sign In</button>
+            <button class="generalButton" @click="signIn">Sign In</button>
       </v-flex>
     </v-layout>
   </v-container>

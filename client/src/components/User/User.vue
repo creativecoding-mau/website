@@ -1,23 +1,24 @@
 <template>
   <div>
     <div class="userSignUp" v-if="currentUser === null && userSigningUp">
-      <p>Sign Up</p>
-      <button @click="signInOrUp">Already a member? Click here to sign in!</button>
+      <button class="generalButton">Sign Up</button>
+      <button class="generalButton" @click="signInOrUp">Already a member? Click here to sign in!</button>
       <user-sign-up/>
     </div>
     <div class="userSignIn" v-if="currentUser === null && userSigningIn">
-      <p>Sign In</p>
-      <p @click="signInOrUp">Not a member? Click here to register!</p>
+      <button class="generalButton" @click="signInOrUp">Not a member? Click here to register!</button>
       <user-sign-in @userIsLoggedIn="setCurrentUser"/>
     </div>
     <div class="userChangeBio" v-else-if="currentUser != null">
-      <p @click="updateBio">Update your bio!</p>
+      <button class="generalButton" @click="updateBio">Update your bio!</button>
       <user-bio :currentUser="currentUser" v-if="userUpdatingBio"/>
     </div>
     <user-sign-out @userSignedOut="userSignedOut" v-if="currentUser != null"/>
     <user-reset-password :currentUser="currentUser" v-if="currentUser != null"/>
   </div>
 </template>
+
+
 
 <script>
 import UserSignUp from "./UserSignUp.vue";
@@ -88,4 +89,5 @@ export default {
 </script>
 
 <style>
+
 </style>

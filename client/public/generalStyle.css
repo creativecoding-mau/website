@@ -1,0 +1,19 @@
+@import '~vuetify/src/stylus/main';
+
+/* Style components for global styling */
+
+.generalButton {
+    padding: .75em 2em;
+    border: .15rem solid white;
+    border-radius: .75rem;
+    background: #ff4757;
+    color: white;
+    transition: all .4s;
+}
+
+.generalButton:hover {
+    font-size: 1.1rem;
+    background: white;
+    border: .15rem solid #ff4757;
+    color: #ff4757;
+}

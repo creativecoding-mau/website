@@ -10,7 +10,7 @@
             <p> <input type="password" name="" v-model="userPassword"> </p>
       </v-flex>
       <v-flex xs12>
-            <button @click="createNewUser">Submit</button>
+            <button class="generalButton" @click="createNewUser">Submit</button>
       </v-flex>
     </v-layout>
   </v-container>
