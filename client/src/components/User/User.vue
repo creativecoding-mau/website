@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="userSignUp" v-if="currentUser === null && userSigningUp">
+    <div class="userSignUp buttonContainer" v-if="currentUser === null && userSigningUp">
       <button class="generalButton">Sign Up</button>
       <button class="generalButton" @click="signInOrUp">Already a member? Click here to sign in!</button>
       <user-sign-up/>

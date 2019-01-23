@@ -2,12 +2,20 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-            <p> Email: </p>
-            <p> <input type="text" id="email" v-model="signInEmail"> </p>
-      </v-flex>
-      <v-flex xs12>
-            <p> Password: </p>
-            <p> <input type="text" id="password" v-model="signInPassword"> </p>
+          <div class="formOuterContainer">
+              <div class="formInnerContainer">
+                  <form action="#" class="formForm">
+                      <div class="formGroup">
+                        <input class="formInput" type="text" id="email" v-model="signInEmail" placeholder="Full e-mail" requierd>
+                        <label for="email" class="formLabel">Email</label>
+                      </div>
+                      <div class="formGroup">
+                        <input class="formInput" type="text" id="password" v-model="signInPassword" placeholder="Password" requierd>
+                        <label for="password" class="formLabel">Password</label>
+                      </div>
+                  </form>
+              </div>
+          </div>
       </v-flex>
       <v-flex xs12>
             <button class="generalButton" @click="signIn">Sign In</button>
@@ -23,8 +31,8 @@ const firebase = require("firebase")
 export default {
     data: function() {
         return {
-            signInEmail: "felixmorau@gmail.com",
-            signInPassword: "felix123",
+            signInEmail: "",
+            signInPassword: "",
             userObject: firebase.auth().currentUser
         }
     },
@@ -61,7 +69,5 @@ export default {
 </script>
 
 <style scoped>
-input {
-    border: 1px solid black;
-}
+
 </style>
