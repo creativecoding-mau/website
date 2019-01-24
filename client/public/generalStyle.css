@@ -2,7 +2,6 @@
 
 /* Style components for global styling */
 
-
 .generalButton {
     padding: .75em 2em;
     border: .15rem solid white;
@@ -20,30 +19,54 @@
     color: #ff4757;
 }
 
-.formOuterContainer {
-
-}
-
 .formInnerContainer {
     padding: 6rem;
 }
 
 .formGroup {
+    margin: 1rem;
 
 }
 
-.formInput {
-
+.formLabel {
+    color: grey;
+    font-size: 1.4rem;
+    font-weight: 200;
+    margin-right: 10rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .4s;
 }
 
 .formInput {
     font-size: 1.5rem;
     padding: 1rem 2rem;
     border-radius: 2px;
-    background-color: rgb(255, 255, 255 , .1);
-    border: 1px solid #ff4757;
+    background-color: rgb(255, 255, 255, .2) !important;
+    border-top: 2px solid #424242;
+    border-bottom: 2px solid #424242;
 }
 
-.formLabel {
+.formInput:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(#424242, .1);
+    border-bottom: 2px solid rgb(81, 177, 81);
+}
 
+.formInput:focus:invalid {
+    border-bottom: 2px solid rgb(247, 128, 48);
+}
+
+.formInput::-webkit-input-placeholder {
+    color: grey;
+}
+
+.formInput:placeholder-shown + .formLabel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3.5rem);
+}
+
+input-internal-autofill-selected {
+    background-color: rgb(255, 255, 255, .2) !important;
 }

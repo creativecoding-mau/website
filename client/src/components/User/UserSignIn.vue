@@ -6,11 +6,11 @@
               <div class="formInnerContainer">
                   <form action="#" class="formForm">
                       <div class="formGroup">
-                        <input class="formInput" type="text" id="email" v-model="signInEmail" placeholder="Full e-mail" requierd>
+                        <input class="formInput" type="email" id="email" v-model="signInEmail" placeholder="Email" requierd>
                         <label for="email" class="formLabel">Email</label>
                       </div>
                       <div class="formGroup">
-                        <input class="formInput" type="text" id="password" v-model="signInPassword" placeholder="Password" requierd>
+                        <input class="formInput" type="password" id="password" v-model="signInPassword" placeholder="Password" requierd>
                         <label for="password" class="formLabel">Password</label>
                       </div>
                   </form>
