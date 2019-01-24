@@ -6,6 +6,16 @@
     </div>
 </template>
 
+<template>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+          <button class="generalButton" @click="resetPassword">RESET PASSWORD</button>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
 <script>
 const firebase = require("firebase")
 
