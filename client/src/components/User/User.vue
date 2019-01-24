@@ -73,9 +73,13 @@ export default {
     },
     userSignedOut() {
       this.currentUser = null;
+      console.log(this.currentUser)
       this.userSigningUp = false;
+      console.log(this.userSigningUp)
       this.userSigningIn = true;
+      console.log(this.userSigningIn)
       this.userUpdatingBio = false;
+      console.log(this.userUpdatingBio)
     }
   },
   components: {
