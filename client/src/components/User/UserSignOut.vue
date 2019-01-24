@@ -21,10 +21,13 @@ export default {
             firebase.auth().signOut().then(() => {
             console.log('Signed Out');
             this.$emit("userSignedOut")
-            }, function(error) {
-            console.error('Sign Out Error', error);
-            }
-            )}
+            });
+            // }, (error) => {
+            // console.error('Sign Out Error', error);
+            // }
+            // )}
+            location.reload()
+        }
     }
 }
 </script>

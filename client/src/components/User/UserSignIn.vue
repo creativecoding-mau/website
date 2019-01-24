@@ -33,7 +33,8 @@ export default {
         return {
             signInEmail: "",
             signInPassword: "",
-            userObject: firebase.auth().currentUser
+            userObject: firebase.auth().currentUser,
+            userSignIn: false
         }
     },
     methods: {
@@ -41,17 +42,24 @@ export default {
             let email = this.signInEmail
             let password = this.signInPassword
 
+            this.userSignInFailed = false
             firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode, errorMessage)
+            if (error) {
+                alert("Email or Password is invalid")
+                this.userSignInFailed = true
+            } 
             }).then(() => {
                 const user = firebase.auth().currentUser
-                if (user.emailVerified) {
+                if (user.emailVerified && !this.userSignInFailed) {
                 this.$emit("userIsLoggedIn", email)
-                } else {
+                } else if (!this.userSignInFailed) {
                     this.verifyUserEmail()
+                    console.log("Verification Email sent!")
+                    
                 }
             });
         },
