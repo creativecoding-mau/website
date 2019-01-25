@@ -9,8 +9,8 @@
       <button class="generalButton" @click="signInOrUp">Not a member? Click here to register!</button>
       <user-sign-in @userIsLoggedIn="setCurrentUser"/>
     </div>
-    <div class="userChangeBio" v-else-if="currentUser != null" :currentUser="currentUser">
-      <button class="generalButton" @click="updateBio">Update your bio!</button>
+    <div class="userChangeBio" v-else-if="currentUser != null">
+      <button class="generalButton" @click="updateBio">Account settings</button>
       <user-bio :currentUser="currentUser" v-if="userUpdatingBio"/>
     </div>
     <user-sign-out @userSignedOut="userSignedOut" v-if="currentUser != null"/>

@@ -2,8 +2,6 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-          <div class="formOuterContainer">
-              <div class="formInnerContainer">
                   <form action="#" class="formForm">
                       <div class="formGroup">
                         <input class="formInput" type="email" id="email" v-model="signInEmail" placeholder="Email" requierd>
@@ -14,8 +12,6 @@
                         <label for="password" class="formLabel">Password</label>
                       </div>
                   </form>
-              </div>
-          </div>
       </v-flex>
       <v-flex xs12>
             <button class="generalButton" @click="signIn">Sign In</button>

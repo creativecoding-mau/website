@@ -15,7 +15,7 @@
             <p> <input type="text" name="" v-model="userGithub"> </p>
       </v-flex>
       <v-flex xs12>
-            <p> <button class="generalButton" @click="changeUserBio">Submit</button> </p>
+            <p> <button class="generalButton" @click="changeUserBio">Save</button> </p>
       </v-flex>
     </v-layout>
   </v-container>
