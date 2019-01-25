@@ -3,7 +3,9 @@
     <vue-header />
     <navigation :currentUser="currentUser"/>
      <!-- <user @userLoggedIn="setUser" /> -->
-     <router-view></router-view>
+     <transition name="fade">
+      <router-view></router-view>
+     </transition>
      <!-- <vue-footer /> -->
   </div>
 </template>
@@ -121,6 +123,14 @@ Style components for global styling
 
 input-internal-autofill-selected {
     background-color: rgb(255, 255, 255, .2) !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    height: 0px;
 }
 
 </style>
