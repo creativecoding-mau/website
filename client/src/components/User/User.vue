@@ -9,7 +9,7 @@
       <button class="generalButton" @click="signInOrUp">Not a member? Click here to register!</button>
       <user-sign-in @userIsLoggedIn="setCurrentUser"/>
     </div>
-    <div class="userChangeBio" v-else-if="currentUser != null">
+    <div class="userChangeBio" v-else-if="currentUser != null" :currentUser="currentUser">
       <button class="generalButton" @click="updateBio">Update your bio!</button>
       <user-bio :currentUser="currentUser" v-if="userUpdatingBio"/>
     </div>
@@ -54,6 +54,7 @@ export default {
     setCurrentUser(email) {
       this.currentUser = email;
       console.log(this.currentUser);
+      this.$emit("userLoggedIn", this.currentUser)
     },
     signInOrUp() {
       if (this.userSigningIn) {

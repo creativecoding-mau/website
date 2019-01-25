@@ -32,6 +32,7 @@ export default {
             userDisplayName: "",
             userWebsite: "",
             userGithub: "",
+            id: this.$route.params.id
         }
     },
     methods: {
