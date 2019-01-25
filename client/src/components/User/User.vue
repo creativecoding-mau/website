@@ -54,6 +54,7 @@ export default {
     setCurrentUser(email) {
       this.currentUser = email;
       console.log(this.currentUser);
+      this.$emit("userLoggedIn", this.currentUser)
     },
     signInOrUp() {
       if (this.userSigningIn) {

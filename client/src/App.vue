@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <vue-header />
-     <user />
-     <vue-footer />
+    <navigation :currentUser="currentUser"/>
+     <!-- <user @userLoggedIn="setUser" /> -->
+     <router-view></router-view>
+     <!-- <vue-footer /> -->
   </div>
 </template>
 
@@ -10,13 +12,25 @@
 import VueHeader from "./components/Header/Header.vue"
 import VueFooter from "./components/Footer/Footer.vue"
 import User from "./components/User/User.vue"
+import Navigation from "./components/Navigation/Navigation.vue"
 
 export default {
   name: 'app',
+  data() {
+    return {
+      currentUser: null
+    }
+  },
   components: {
     VueHeader,
     VueFooter,
-    User
+    User,
+    Navigation
+  },
+  methods: {
+    setUser(user) {
+      this.currentUser = user;
+    }
   }
 }
 </script> 
