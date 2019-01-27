@@ -4,6 +4,7 @@
             <router-link to="/" tag="li" active-class="active" exact><a>About</a></router-link>
             <router-link to="/projects" tag="li" active-class="active" ><a>Projects</a></router-link>
             <router-link to="/profile" tag="li" active-class="active" ><a>Profile</a></router-link>
+            <router-link to="/members" tag="li" active-class="active" ><a>Members</a></router-link>
         </ul>
     </div>
 </template>

@@ -4,7 +4,7 @@
       <v-flex xs12>
             <p> logged in user {{ currentUser }} </p>
             <p> Display Name </p>
-            <input type="text" name="" v-model="userWebsite">
+            <input type="text" name="" v-model="userDisplayName">
       </v-flex>
       <v-flex xs12>
             <p> User Website </p>
@@ -46,6 +46,7 @@ export default {
             console.log(error)
             });
             let userBio = {
+                email: this.currentUser,
                 displayName: this.userDisplayName,
                 website: this.userWebsite,
                 github: this.userGithub,
