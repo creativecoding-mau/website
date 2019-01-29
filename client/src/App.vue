@@ -60,7 +60,7 @@ Style components for global styling
     padding: .75em 2em;
     border: .15rem solid white;
     border-radius: .75rem;
-    background: #ff4757;
+    background: #ff6348;
     color: white;
     transition: all .4s;
 }
@@ -68,8 +68,8 @@ Style components for global styling
 .generalButton:hover {
     font-size: 1.1rem;
     background: white;
-    border: .15rem solid #ff4757;
-    color: #ff4757;
+    border: .15rem solid #ff6348;
+    color: #ff6348;
 }
 
 /* Global Form style for all input fields */
