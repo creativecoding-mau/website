@@ -26,7 +26,7 @@ export default {
 <style scoped>
 
     .navContainer {
-        background: #ff7f50;
+        background: linear-gradient(to bottom right,  rgba(255,61,37,.9) 50%, rgba(255, 99, 72, .9));
         max-width: 100%;
     }
 
@@ -47,5 +47,10 @@ export default {
     .navLink {
         color: #FFF;
         text-decoration: none;
+        transition: all 5s;
+    }
+
+    .navListItem:hover {
+          
     }
 </style>
