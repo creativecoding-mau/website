@@ -4,6 +4,7 @@
       <v-flex xs12>
           <h1 class="mainHeader"> Creative Coding </h1>
           <h3 class="subHeader"> Malmö University Society of Computer Science and Media Technology </h3>
+          <img class="logo" src="../../assets/cc_icon.png" alt="Creative Coding Logo">
       </v-flex>
     </v-layout>
   </v-container>
@@ -19,7 +20,7 @@ export default {
 
 <style scoped>
     .mainHeader {
-        color: #ff4757;
+        color: #FF7F1F;
         font-size: 5rem;
         font-weight: 200;
         text-transform: uppercase;
@@ -28,5 +29,9 @@ export default {
     .subHeader {
         font-size: 1.3rem;
         font-weight: 200;
+    }
+
+    .logo {
+        width: 17rem;
     }
 </style>
