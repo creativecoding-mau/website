@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <vue-header />
     <navigation :currentUser="currentUser"/>
+    <vue-header />
      <!-- <user @userLoggedIn="setUser" /> -->
      <transition name="fade">
       <router-view></router-view>
@@ -52,24 +52,29 @@ Style components for global styling
   text-align: center;
   color: #2c3e50;
   margin-top: 1rem;
+  margin-top: 0;
 }
 
 /* Global button style for all buttons */
 
 .generalButton {
+    font-size: 1.1rem;
     padding: .75em 2em;
-    border: .15rem solid white;
-    border-radius: .75rem;
-    background: #ff6348;
-    color: white;
+    border: .15rem solid #FFF;
+    border-radius: 2rem;
+    background: linear-gradient(to right,  #c1212f, #ff6348, #ff9f43);
+    color: #FFF;
     transition: all .4s;
+    margin: .2rem;
+    
 }
 
 .generalButton:hover {
-    font-size: 1.1rem;
-    background: white;
-    border: .15rem solid #ff6348;
-    color: #ff6348;
+    transform: translateY(-.4rem);
+}
+
+.generalButton:active {
+    transform: translateY(.3rem);
 }
 
 /* Global Form style for all input fields */
@@ -83,7 +88,7 @@ Style components for global styling
 }
 
 .formLabel {
-    color: grey;
+    color: #424242;
     font-size: 1.4rem;
     font-weight: 200;
     margin-right: 11rem;
@@ -104,7 +109,7 @@ Style components for global styling
 .formInput:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(#424242, .1);
-    border-bottom: 2px solid rgb(81, 177, 81);
+    border-bottom: 2px solid #ff6348;
 }
 
 .formInput:focus:invalid {
@@ -112,13 +117,13 @@ Style components for global styling
 }
 
 .formInput::-webkit-input-placeholder {
-    color: grey;
+    color: #424242;
 }
 
 .formInput:placeholder-shown + .formLabel {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(3.5rem);
+    transform: translateY(-3.5rem);
 }
 
 input-internal-autofill-selected {

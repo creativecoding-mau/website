@@ -6,7 +6,7 @@
       <user-sign-up/>
     </div>
     <div class="userSignIn" v-if="currentUser === null && userSigningIn">
-      <button class="generalButton" @click="signInOrUp">Not a member? Click here to register!</button>
+      <button class="generalButton" @click="signInOrUp">Click here to register</button>
       <user-sign-in @userIsLoggedIn="setCurrentUser"/>
     </div>
     <div class="userChangeBio" v-else-if="currentUser != null">
