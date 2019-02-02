@@ -1,5 +1,8 @@
 <template>
     <div>
+  <v-container text-xs-center class="memberContainer">
+    <v-layout row wrap>
+      <v-flex xs12>
         <section>
             <div class="innerDiv">
                 <div class="innerDiv">
@@ -21,6 +24,9 @@
                 </div>
         </div>
         </section>
+      </v-flex>
+    </v-layout>
+  </v-container>
     </div>
 </template>
 
@@ -105,6 +111,19 @@ p {
 .memberCard:hover {
   color: #fff;
   transition: 1s;
+}
+.memberContainer {
+  min-width: 100%;
+    background: linear-gradient(to bottom,  rgba(255,61,37,.9) 50%, rgba(255, 99, 72, .9));
+    -webkit-clip-path: polygon(0 0, 100% 11%, 100% 100%, 0 89%);
+    clip-path: polygon(0 0, 100% 11%, 100% 100%, 0 89%);
+    padding-right: 0;
+    padding-left: 0;
+    min-height: 600px;
+}
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 @media only screen and (max-width: 1000px) {
   .memberCard {
