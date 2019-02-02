@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="userSignUp buttonContainer" v-if="currentUser === null && userSigningUp">
+    <v-container text-xs-center class="profileContainer">
+    <v-layout row wrap>
+      <v-flex xs12>
+        <div class="userSignUp buttonContainer" v-if="currentUser === null && userSigningUp">
       <button class="generalButton">Sign Up</button>
       <button class="generalButton" @click="signInOrUp">Already a member? Click here to sign in!</button>
       <user-sign-up/>
@@ -15,6 +18,9 @@
     </div>
     <user-sign-out @userSignedOut="userSignedOut" v-if="currentUser != null"/>
     <user-reset-password :currentUser="currentUser" v-if="currentUser != null"/>
+      </v-flex>
+    </v-layout>
+  </v-container>
   </div>
 </template>
 
@@ -94,5 +100,13 @@ export default {
 </script>
 
 <style>
-
+.profileContainer {
+    min-width: 100%;
+    background: linear-gradient(to bottom,  rgba(255,61,37,.9) 50%, rgba(255, 99, 72, .9));
+    -webkit-clip-path: polygon(0 0, 100% 11%, 100% 100%, 0 89%);
+    clip-path: polygon(0 0, 100% 11%, 100% 100%, 0 89%);
+    padding-right: 0;
+    padding-left: 0;
+    min-height: 300px;
+}
 </style>
