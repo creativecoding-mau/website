@@ -15,6 +15,10 @@
             <p> <input type="text" name="" v-model="userGithub"> </p>
       </v-flex>
       <v-flex xs12>
+            <p> User Image </p>
+            <p> <input type="text" name="" v-model="userImage"> </p>
+      </v-flex>
+      <v-flex xs12>
             <p> <button class="generalButton" @click="changeUserBio">Save</button> </p>
       </v-flex>
     </v-layout>
@@ -32,7 +36,8 @@ export default {
             userDisplayName: "",
             userWebsite: "",
             userGithub: "",
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            userImage: ""
         }
     },
     methods: {
@@ -50,6 +55,8 @@ export default {
                 displayName: this.userDisplayName,
                 website: this.userWebsite,
                 github: this.userGithub,
+                image: this.userImage,
+                role: "Member"
             }
             axios
           .put(

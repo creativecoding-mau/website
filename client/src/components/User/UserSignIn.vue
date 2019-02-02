@@ -2,19 +2,19 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-                  <form action="#" class="formForm">
-                      <div class="formGroup">
-                        <input class="formInput" type="email" id="email" v-model="signInEmail" placeholder="Email" requierd>
-                        <label for="email" class="formLabel">Email</label>
-                      </div>
-                      <div class="formGroup">
-                        <input class="formInput" type="password" id="password" v-model="signInPassword" placeholder="Password" requierd>
-                        <label for="password" class="formLabel">Password</label>
-                      </div>
-                  </form>
+        <form action="#" class="formForm">
+            <div class="formGroup">
+            <input class="formInput" type="email" id="email" v-model="signInEmail" placeholder="Email" requierd>
+            <label for="email" class="formLabel">Email</label>
+            </div>
+            <div class="formGroup">
+            <input class="formInput" type="password" id="password" v-model="signInPassword" placeholder="Password" requierd>
+            <label for="password" class="formLabel">Password</label>
+            </div>
+        </form>
       </v-flex>
       <v-flex xs12>
-            <button class="generalButton" @click="signIn">Sign In</button>
+        <button class="generalButton" @click="signIn">Sign In</button>
       </v-flex>
     </v-layout>
   </v-container>
