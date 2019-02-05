@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
-      <v-flex xs12>
+      <v-flex class="headerContainer" xs12>
           <h1 class="mainHeader"> Creative Coding </h1>
           <h3 class="subHeader"> Malmö University Society of Computer Science and Media Technology </h3>
           <img class="logo" src="../../assets/cc_icon.png" alt="Creative Coding Logo">
@@ -19,6 +19,11 @@ export default {
 </script>
 
 <style scoped>
+
+    .headerContainer {
+        margin-top: 5rem;
+    }
+
     .mainHeader {
         color: #FF7F1F;
         font-size: 5rem;

@@ -1,7 +1,10 @@
 <template>
-  <v-container text-xs-center class="navContainer">
-    <v-layout row wrap>
-      <v-flex xs12>
+  <v-container fluid class="navContainer">
+    <v-layout row>
+      <v-flex shrink pa-1>
+            <img class="navLogo" src="../../assets/cc_icon_white.png" alt="Creative Coding Logo">
+      </v-flex>
+      <v-flex grow pa-1>
         <ul class="navList">
             <router-link to="/" tag="li" active-class="active" exact class="navListItem"><a class="navLink">About</a></router-link>
             <router-link to="/projects" tag="li" active-class="active" class="navListItem"><a class="navLink">Projects</a></router-link>
@@ -28,6 +31,13 @@ export default {
     .navContainer {
         background: linear-gradient(to bottom right,  rgba(255,61,37,.9) 50%, rgba(255, 99, 72, .9));
         max-width: 100%;
+        padding: .2rem;
+        position: fixed;
+        transition: all .5s;
+    }
+
+    .navContainer:hover {
+        padding-bottom: 2.8rem;
     }
 
     .navList {
@@ -39,18 +49,21 @@ export default {
         display: inline-block;
         padding-left: 2rem;
         padding-right: 2rem;
-        padding-top: .1rem;
-        padding-bottom: .1rem;
-        font-size: 1.8rem;
     }
 
     .navLink {
         color: #FFF;
         text-decoration: none;
         transition: all 5s;
+        font-size: 1.5rem;
+        text-transform: uppercase;
     }
 
     .navListItem:hover {
-          
+        text-decoration: underline;
+    }
+
+    .navLogo {
+        width: 4rem;
     }
 </style>
