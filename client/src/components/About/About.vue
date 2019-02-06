@@ -12,6 +12,7 @@
                 The only requirements for joining our group is that you are a student at Malmö University. Click the Profile tab, register a new account, sign in with your account and then authentiacte with your email and you are in! Note that you have to edit your profile in order to be shown in the Members tab.
                 Our different means of communication can be found under the Contact tab. Many of our members are available in the Discord channel so if you ever require help that is where to look!    
             </p>
+            
         </section>
         </main>
       </v-flex>
