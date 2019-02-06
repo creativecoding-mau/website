@@ -6,10 +6,10 @@
       </v-flex>
       <v-flex grow pa-1>
         <ul class="navList">
-            <router-link to="/" tag="li" active-class="active" exact class="navListItem"><a class="navLink">About</a></router-link>
-            <router-link to="/projects" tag="li" active-class="active" class="navListItem"><a class="navLink">Projects</a></router-link>
-            <router-link to="/profile" tag="li" active-class="active" class="navListItem"><a class="navLink">Profile</a></router-link>
-            <router-link to="/members" tag="li" active-class="active" class="navListItem"><a class="navLink">Members</a></router-link>
+            <router-link to="/" tag="li" active-class="active" exact class="navListItem"><a class="navLink"><i class="fas fa-home"></i> Home</a></router-link>
+            <router-link to="/projects" tag="li" active-class="active" class="navListItem"><a class="navLink"><i class="fas fa-tasks"></i> Projects</a></router-link>
+            <router-link to="/profile" tag="li" active-class="active" class="navListItem"><a class="navLink"><i class="fas fa-user-circle"></i> Profile</a></router-link>
+            <router-link to="/members" tag="li" active-class="active" class="navListItem"><a class="navLink"><i class="fas fa-users"></i> Members</a></router-link>
         </ul>
       </v-flex>
     </v-layout>
